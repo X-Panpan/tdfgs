@@ -1,34 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>我的第一个网页</title>
+    <title>在线问卷</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f0f0f0;
-        }
+        body { font-family: Arial, sans-serif; background: #f0f0f0; }
         .container {
             max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: white;
+            margin: 20px auto;
+            padding: 30px;
+            background: white;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        img {
-            max-width: 300px;
-            border-radius: 10px;
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 5px; }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>欢迎来到我的网站！</h1>
-        <p>这是我的第一个在线网页 🎉</p>
-        <img src="https://picsum.photos/300/200" alt="示例图片">
-        <p>随时可以修改这些内容</p>
-        <p>📧 联系我：myname@example.com</p>
+        <form action="https://formspree.io/f/你的表单ID" method="POST">
+            <h1>用户满意度调查</h1>
+            
+            <div class="form-group">
+                <label>您的姓名：</label>
+                <input type="text" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label>联系邮箱：</label>
+                <input type="email" name="_replyto" required>
+            </div>
+            
+            <div class="form-group">
+                <label>满意度评分：</label>
+                <select name="rating">
+                    <option value="5">5星 - 非常满意</option>
+                    <option value="4">4星 - 满意</option>
+                    <option value="3">3星 - 一般</option>
+                </select>
+            </div>
+            
+            <button type="submit">提交问卷</button>
+        </form>
     </div>
 </body>
 </html>
